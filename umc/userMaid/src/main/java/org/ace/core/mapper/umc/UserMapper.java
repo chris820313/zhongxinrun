@@ -8,5 +8,7 @@ public interface UserMapper extends UmcMapper<User> {
 
     User getUser(@Param("username") String username);
 
-    Integer updateUserFrozenState(@Param("username") String username, @Param("frozen") Integer frozen);
+    int updateUserFrozenState(@Param("username") String username, @Param("frozen") Integer frozen);
+
+    int updatePassword(@Param("username") String username, @Param("password") String password);
 }

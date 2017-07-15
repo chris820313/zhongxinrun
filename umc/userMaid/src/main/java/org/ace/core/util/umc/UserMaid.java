@@ -34,4 +34,8 @@ public class UserMaid extends UtilTemplate {
     public static void updateUserFrozenState(String username, Integer frozen) {
         provider.updateUserFrozenState(username, frozen);
     }
+
+    public static void updatePassword(String username, String password) {
+        provider.updatePassword(username, password);
+    }
 }

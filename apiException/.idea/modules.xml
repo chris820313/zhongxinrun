@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apiException.iml" filepath="$PROJECT_DIR$/apiException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apiException_main.iml" filepath="$PROJECT_DIR$/.idea/modules/apiException_main.iml" group="apiException" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apiException_test.iml" filepath="$PROJECT_DIR$/.idea/modules/apiException_test.iml" group="apiException" />
+    </modules>
+  </component>
+</project>

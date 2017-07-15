@@ -20,7 +20,7 @@ public class UserMaidTestConfigurer {
     public Integer initUtil() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        druidDataSource.setUrl("jdbc:mysql://192.168.1.4:3306/db_bayan?characterEncoding=utf8");
+        druidDataSource.setUrl("jdbc:mysql://192.168.1.4:3306/db_bayan?characterEncoding=utf8&useAffectedRows=true");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("1qaz2wsx");
         HashMap<Class<? extends UtilTemplate>, Object[]> args = new HashMap<>();

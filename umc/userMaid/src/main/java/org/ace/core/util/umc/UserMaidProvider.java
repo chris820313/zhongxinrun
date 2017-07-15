@@ -3,6 +3,7 @@ package org.ace.core.util.umc;
 import com.bonc.core.annotation.util.UtilService;
 import com.bonc.core.util.UtilProvider;
 import org.ace.core.domain.umc.User;
+import org.ace.core.exception.umc.UserNotExistException;
 import org.ace.core.mapper.umc.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -19,6 +20,9 @@ import javax.sql.DataSource;
 public class UserMaidProvider extends UtilProvider {
     private static SqlSessionFactory sessionFactory;
 
+    private static SqlSession openSession() {
+        return sessionFactory.openSession();
+    }
 
     private static SqlSessionFactory primarySqlSessionFactoryBean(DataSource primaryDataSource) {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
@@ -45,7 +49,7 @@ public class UserMaidProvider extends UtilProvider {
 
     @UtilService
     public boolean authenticate(String username, String password) {
-        SqlSession session = sessionFactory.openSession();
+        SqlSession session = openSession();
         try {
             session = sessionFactory.openSession();
             UserMapper mapper = session.getMapper(UserMapper.class);
@@ -58,11 +62,13 @@ public class UserMaidProvider extends UtilProvider {
 
     @UtilService
     public User getUser(String username) {
-        SqlSession session = sessionFactory.openSession();
+        SqlSession session = openSession();
         try {
             session = sessionFactory.openSession();
             UserMapper mapper = session.getMapper(UserMapper.class);
-            return mapper.getUser(username);
+            User user = mapper.getUser(username);
+            if (user == null) throw new UserNotExistException(username);
+            return user;
         } finally {
             session.close();
         }
@@ -70,12 +76,26 @@ public class UserMaidProvider extends UtilProvider {
 
     @UtilService
     public void updateUserFrozenState(String username, Integer frozen) {
-        SqlSession session = sessionFactory.openSession();
+        SqlSession session = openSession();
         try {
             session = sessionFactory.openSession();
             UserMapper mapper = session.getMapper(UserMapper.class);
             if (mapper.updateUserFrozenState(username, frozen) == 0) {
+                throw new UserNotExistException(username);
+            }
+        } finally {
+            session.close();
+        }
+    }
 
+    @UtilService
+    public void updatePassword(String username, String password) {
+        SqlSession session = openSession();
+        try {
+            session = sessionFactory.openSession();
+            UserMapper mapper = session.getMapper(UserMapper.class);
+            if (mapper.updatePassword(username, password) == 0) {
+                throw new UserNotExistException(username);
             }
         } finally {
             session.close();

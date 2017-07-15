@@ -62,6 +62,8 @@ configurations {
 /*程序编译的依赖包*/
 dependencies {
 
+    //api 异常
+    compile group: 'org.ace.core', name: 'apiException', version: 'latest.release'
     //工具模板
     compile group: 'com.bonc.core', name: 'utilTemplate', version: 'latest.release'
     //mybatis

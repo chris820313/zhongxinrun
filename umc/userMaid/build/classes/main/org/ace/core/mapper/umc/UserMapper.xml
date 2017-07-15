@@ -16,7 +16,10 @@
     <select id="getUser" parameterType="String" resultType="User">
         SELECT `username`, `frozen`, `create` FROM `user` where `username` = #{username}
     </select>
-    <update id="updateUserFrozenState" >
-        update `user` set `frozen` = #{frozen} and `username` = #{username}
+    <update id="updateUserFrozenState">
+        update `user` set `frozen` = #{frozen}, `update` = now() where `username` = #{username}
+    </update>
+    <update id="updatePassword">
+        update `user` set `password` = password(#{password}), `update` = now() where `username` = #{username}
     </update>
 </mapper>
