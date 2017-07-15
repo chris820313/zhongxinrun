@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ace.core.mapper.umc.UserMapper">
+    <resultMap id="BaseResultMap" type="org.ace.core.domain.umc.User">
+        <!--
+          WARNING - @mbggenerated
+        -->
+        <id column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="frozen" jdbcType="BIT" property="frozen"/>
+        <result column="create" jdbcType="TIMESTAMP" property="create"/>
+    </resultMap>
+    <select id="authenticate" resultType="Integer">
+        SELECT count(1) as `hit` FROM `user` where `username` = #{username} and `password` = password(#{password})
+    </select>
+    <select id="getUser" parameterType="String" resultType="User">
+        SELECT `username`, `frozen`, `create` FROM `user` where `username` = #{username}
+    </select>
+    <update id="updateUserFrozenState" >
+        update `user` set `frozen` = #{frozen} and `username` = #{username}
+    </update>
+</mapper>
