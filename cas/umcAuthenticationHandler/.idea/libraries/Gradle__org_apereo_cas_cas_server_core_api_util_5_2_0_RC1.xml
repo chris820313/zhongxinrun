@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apereo.cas:cas-server-core-api-util:5.2.0-RC1">
+    <CLASSES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.cas/cas-server-core-api-util/5.2.0-RC1/e747d0e7cb6d97c72c95378b98581bca98d1833a/cas-server-core-api-util-5.2.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.cas/cas-server-core-api-util/5.2.0-RC1/65ee6af249447be1b7a88c22938f895758758491/cas-server-core-api-util-5.2.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.ldaptive:ldaptive-apache:1.2.1">
+    <CLASSES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.ldaptive/ldaptive-apache/1.2.1/860e9ef44c5ebdf8fab896ee04f6ec183852e7a1/ldaptive-apache-1.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.ldaptive/ldaptive-apache/1.2.1/6c2882d8b70e87d560a6409e640e4f86a46e3d76/ldaptive-apache-1.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

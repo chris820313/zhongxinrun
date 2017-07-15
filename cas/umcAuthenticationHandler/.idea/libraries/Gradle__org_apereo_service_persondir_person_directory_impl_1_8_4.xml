@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apereo.service.persondir:person-directory-impl:1.8.4">
+    <CLASSES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.service.persondir/person-directory-impl/1.8.4/6e503594b072ee95fa2892901c0dad579865bf77/person-directory-impl-1.8.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.service.persondir/person-directory-impl/1.8.4/d8113fa922c2ea62a1cbc34bc501c058acb620ee/person-directory-impl-1.8.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apereo.cas:cas-server-core-authentication:5.2.0-RC1">
+    <CLASSES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.cas/cas-server-core-authentication/5.2.0-RC1/d9009ede549250e44980547c0c4194e3cd348f/cas-server-core-authentication-5.2.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Program Files/gradle-3.5-bin/gradle-3.5/cache/caches/modules-2/files-2.1/org.apereo.cas/cas-server-core-authentication/5.2.0-RC1/c9fe646b7bcc853fb0077f51141c94c92cdaf6ce/cas-server-core-authentication-5.2.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
