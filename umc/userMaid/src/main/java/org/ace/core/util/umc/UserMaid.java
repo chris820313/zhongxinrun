@@ -6,6 +6,8 @@ import org.ace.core.domain.umc.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 /**
  * Created by doraemon on 7/15/2017.
  */
@@ -37,5 +39,9 @@ public class UserMaid extends UtilTemplate {
 
     public static void updatePassword(String username, String password) {
         provider.updatePassword(username, password);
+    }
+
+    public static void addUser(String username, String password, Map args) {
+        provider.addUser(username, password, args);
     }
 }

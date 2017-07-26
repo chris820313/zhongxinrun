@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.ace.core.test.umc.UserMaidTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-07-15T16:34:27" hostname="doraemon-PC" time="0.3">
+<testsuite name="org.ace.core.test.umc.UserMaidTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-07-23T02:57:02" hostname="doraemon-PC" time="0.33">
   <properties/>
-  <testcase name="testAuthenticate" classname="org.ace.core.test.umc.UserMaidTest" time="0.263"/>
-  <testcase name="testGetUser" classname="org.ace.core.test.umc.UserMaidTest" time="0.006"/>
-  <testcase name="testUpdateFrozen" classname="org.ace.core.test.umc.UserMaidTest" time="0.007"/>
-  <testcase name="testUpdatePassword" classname="org.ace.core.test.umc.UserMaidTest" time="0.021"/>
+  <testcase name="testAuthenticate" classname="org.ace.core.test.umc.UserMaidTest" time="0.272"/>
+  <testcase name="testAddUser" classname="org.ace.core.test.umc.UserMaidTest" time="0.029"/>
+  <testcase name="testGetUser" classname="org.ace.core.test.umc.UserMaidTest" time="0.009"/>
+  <testcase name="testUpdateFrozen" classname="org.ace.core.test.umc.UserMaidTest" time="0.018"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \

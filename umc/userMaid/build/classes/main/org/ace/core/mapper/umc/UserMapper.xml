@@ -22,4 +22,9 @@
     <update id="updatePassword">
         update `user` set `password` = password(#{password}), `update` = now() where `username` = #{username}
     </update>
+    <insert id="addUser" parameterType="map">
+        insert into `user`(`username`, `password`, `create`)
+        select #{username} as `username`, password(#{password}) as `password`, now() as `create`
+        from dual where not exists(select 1 from `user` where `username` = #{username})
+    </insert>
 </mapper>

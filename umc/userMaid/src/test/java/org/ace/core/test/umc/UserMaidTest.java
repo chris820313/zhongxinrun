@@ -1,5 +1,6 @@
 package org.ace.core.test.umc;
 
+import org.ace.core.exception.umc.UserExistException;
 import org.ace.core.exception.umc.UserNotExistException;
 import org.ace.core.util.umc.UserMaid;
 import org.junit.Assert;
@@ -18,7 +19,7 @@ public class UserMaidTest {
 
     @Test
     public void testAuthenticate() {
-        Assert.assertTrue(UserMaid.authenticate("root", "123456"));
+        Assert.assertTrue(UserMaid.authenticate("root", "234567"));
     }
 
     @Test(expected = UserNotExistException.class)
@@ -33,11 +34,11 @@ public class UserMaidTest {
         UserMaid.updateUserFrozenState("other", null);
     }
 
-    @Test(expected = UserNotExistException.class)
-    public void testUpdatePassword() {
-        UserMaid.updatePassword("root", "234567");
-        UserMaid.updatePassword("root", "234567");
-        UserMaid.updatePassword("root", "123456");
-        UserMaid.updatePassword("other", "1234");
+
+    @Test(expected = UserExistException.class)
+    public void testAddUser() {
+        UserMaid.addUser("root_2", "123456", null);
+        UserMaid.addUser("root", "123456", null);
+
     }
 }
