@@ -1,0 +1,76 @@
+group 'org.ace.core.api'
+
+apply plugin: 'java' //这个不需要解释
+apply plugin: 'idea' //grale帮助idea生成一些项目管理文件用的
+apply plugin: 'war' //打war必备
+apply plugin: 'org.ace.gradle.plugin.version' //公司自己编写的包版本控制gradle插件
+
+
+sourceCompatibility = 1.8
+
+/*buildscript 内对依赖的下载地址和gradle需要的插件进行定义*/
+buildscript {
+    /*配置bonc nexus仓库地址*/
+    ext.nexus_host = "" //nexus的地址
+    ext.nexus_repositories = "http://${project.nexus_host}/nexus/content/groups/public/" //包下载地址
+    ext.nexus_publish = "http://${project.nexus_host}/nexus/content/repositories/thirdparty" //工程结果发布地址
+
+    /*配置插件下载地址*/
+    repositories {
+        maven { url project.nexus_repositories } //bonc的gradle插件仓库
+        maven { url "https://plugins.gradle.org/m2/" } //gradle自己的插件仓库
+    }
+
+    /*声明gralde插件的依赖*/
+    dependencies {
+        //version control
+        classpath "org.ace.gradle.plugin:version:latest.release" //通过动态版本获取最新的版本控制插件
+    }
+
+    /*配置插件动态版本的缓存时间*/
+    configurations.all {
+        resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+/*配置依赖包动态版本的缓存时间*/
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+/*配置依赖包地址*/
+repositories {
+    maven { url project.nexus_repositories } //bonc的仓库
+    mavenCentral() //maven官方仓库
+}
+
+/*程序编译的依赖包*/
+dependencies {
+    //spring boot的核心组件
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.3.RELEASE'
+    //api调用标准响应组件
+    compile group: 'com.bonc.core.domain.api', name: 'standardResponse', version: 'latest.release'
+    // api 错误
+    compile group: 'com.bonc.core.exception.api', name: 'apiException', version: 'latest.release'
+    //oauth2资源服务器
+    compile group: 'com.bonc.core.api', name: 'oauth2ResourceServer', version: 'latest.release'
+    //api异常工作流水线
+    runtime group: 'com.bonc.core.aspect.api', name: 'apiExceptionPipeline', version: 'latest.release'
+    runtime group: 'com.bonc.core.plugin.api', name: 'defaultApiExceptionPipelineWorker', version: 'latest.release'
+    //测试编译所需要的组件
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+/*令javadoc支持中文*/
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+}
+
+/*版本控制的仓库配置*/
+archiveWarehouse {
+    url = project.nexus_publish
+    user = ""
+    password = ""
+}
