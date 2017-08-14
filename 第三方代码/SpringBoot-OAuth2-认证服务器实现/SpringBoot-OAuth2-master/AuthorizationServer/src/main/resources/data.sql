@@ -1,0 +1,11 @@
+/*
+-- Query: SELECT * FROM oauth.oauth_client_details
+LIMIT 0, 1000
+
+-- Date: 2017-08-03 16:06
+*/
+INSERT INTO `oauth_client_details` (`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`autoapprove`) VALUES ('hawkeye_unit_test',NULL,'123456','hawkeye','client_credentials',NULL,NULL,36000000,36000000,NULL,'1') ON DUPLICATE KEY UPDATE `client_id` = `client_id`;
+INSERT INTO `oauth_client_details` (`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`autoapprove`) VALUES ('hawkeye_index_manager',NULL,'2wsx#EDC4rfv',NULL,'client_credentials',NULL,NULL,36000000,36000000,NULL,'1') ON DUPLICATE KEY UPDATE `client_id` = `client_id`;
+INSERT INTO `oauth_client_details` (`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`autoapprove`) VALUES ('hawkeye_user_manager',NULL,'1qaz$RFV2wsx#EDC','hawkeye.index.get','client_credentials',NULL,NULL,36000000,36000000,NULL,'1') ON DUPLICATE KEY UPDATE `client_id` = `client_id`;
+INSERT INTO `oauth_client_details` (`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`autoapprove`) VALUES ('hawkeye_shell',NULL,'1qaz4rfv2wsx3edc','hawkeye.acl.get,hawkeye.user.get,hawkeye.cluster.get,hawkeye.index.get,hawkeye.document.get,hawkeye.search.generic,hawkeye.history.create,hawkeye.history.get','client_credentials',NULL,NULL,36000000,36000000,NULL,'1') ON DUPLICATE KEY UPDATE `client_id` = `client_id`;
+INSERT INTO `oauth_client_details` (`client_id`,`resource_ids`,`client_secret`,`scope`,`authorized_grant_types`,`web_server_redirect_uri`,`authorities`,`access_token_validity`,`refresh_token_validity`,`additional_information`,`autoapprove`) VALUES ('hawkeye_search',NULL,')P:?9ol.*IK<7ujm','hawkeye.acl.get,hawkeye.user.get','client_credentials',NULL,NULL,36000000,36000000,NULL,'1') ON DUPLICATE KEY UPDATE `client_id` = `client_id`;
